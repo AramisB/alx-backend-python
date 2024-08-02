@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+'''function float'''
 
 
 def floor(n: float) -> int:
