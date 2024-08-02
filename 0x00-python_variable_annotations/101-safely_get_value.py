@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-'''function safely_get_value'''
+"""
+More involved type annotations
+"""
+from typing import Mapping, Any, Union, TypeVar
+T = TypeVar('T')
 
 
-from typing import Any, Mapping, Union, TypeVar
-
-
-def safely_get_value(dct: Mapping[Any, Any], key: Any,
-                     default: Any = None) -> Union[Any, None]:
+def safely_get_value(dct: Mapping, key: Any,
+                     default: Union[T, None] = None) -> Union[Any, T]:
     """
-    A type-annotated function safely_get_value that takes
-    a dictionary dct, an index key and a default value default
-    and returns the value stored in the dictionary
-    at the index key or the default value if the key doesn’t exist
+    safely get value
     """
     if key in dct:
         return dct[key]
